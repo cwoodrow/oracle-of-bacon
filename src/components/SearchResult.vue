@@ -1,5 +1,5 @@
 <template>
-  <div id="cytos" style="height:200px; border:solid"/></div>
+  <div class="cytos box" ref="cytos" style=""/></div>
 </template>
 
 <script>
@@ -7,16 +7,9 @@
 
   export default {
     name: 'search-result',
-    mounted: () => {
-      /* eslint-disable */
-//      console.log(document.getElementById('result'));
-      console.log(`this : ${this}`);
-      /* eslint-enable */
-
+    mounted() {
       cytoscape({
-        /* eslint-disable */
-        container: document.getElementById('result'),
-        /* eslint-enable */
+        container: this.$refs.cytos,
         layout: {
           name: 'circle',
         },
@@ -65,8 +58,7 @@
           {
             selector: 'node',
             style: {
-              shape: 'hexagon',
-              'background-color': 'red',
+              'background-color': '#37403F',
               label: 'data(id)',
             },
           },
@@ -83,12 +75,10 @@
 </script>
 
 <style scoped>
-  #cytos {
-      height: 800;
-
-      top: 0px;
-      left: 0px;
-      margin-left: auto;
-      margin-right: auto;
+  .cytos {
+      width: 400px;
+      height: 400px;
   }
+
+
 </style>

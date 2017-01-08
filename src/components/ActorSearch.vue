@@ -1,7 +1,14 @@
 <template>
-  <div class="form-container">
-    <input :placeHolder="msg" class="actor-name"></input>
-    <button class="search-button">Search</button>
+  <div>
+    <div class="form-container">
+      <input :placeHolder="msg" class="actor-name"></input>
+      <button class="search-button">Search</button>
+      <div class="suggest">
+        <div>Kevin Spacey</div>
+        <div>Kevin Spacey</div>
+      </div>
+    </div>
+
   </div>
 </template>
 
@@ -20,34 +27,50 @@
   body {
     box-sizing: border-box;
   }
+
   .form-container {
-    /*outline: 1px solid red;*/
-    /*width: 300px;*/
     width: 300px;
     margin: 5px auto;
     position: relative;
     text-align: left;
   }
   .actor-name {
-    border:solid 2px black;
-    border-radius:5px;
+    border:solid 3px #37403F;
+    border-radius: 5px;
     text-align:center;
     width: 220px;
     height: 30px;
     font-size: 15px;
     display:inline-block;
+    opacity: 0.75;
+    background-color:lightgray;
   }
   .search-button {
-    border:solid 2px black;
-    border-radius:5px;
-    background-color: white;
-    display:inline-block;
+    border:solid 3px #37403F;
+    border-radius: 5px;
     font-size: 15px;
     position: absolute;
     top : 0;
     right: 0;
     bottom: 0;
-    /*box-shadow:0 0 6px;*/
+    display:inline-block;
+    opacity: 0.75;
+    background-color:lightgray;
+  }
+
+  .suggest {
+    border:solid 3px #37403F;
+    position: absolute;
+    width: 220px;
+    border-radius: 5px;
+    text-align: center;
+
+    background-color: white;
+    margin-top: 2px;
+    box-shadow: 2px 2px 2px 1px grey;
+    z-index: 100;
+    font-family: 'Avenir', Helvetica, Arial, sans-serif;
+    display: none;
   }
 
 </style>
