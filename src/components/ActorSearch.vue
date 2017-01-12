@@ -35,7 +35,7 @@
     text-align: left;
   }
   .actor-name {
-    border:solid 3px #37403F;
+    border:solid 2px #37403F;
     border-radius: 5px;
     text-align:center;
     width: 220px;
@@ -46,7 +46,7 @@
     background-color:lightgray;
   }
   .search-button {
-    border:solid 3px #37403F;
+    /*border:solid 3px #37403F;*/
     border-radius: 5px;
     font-size: 15px;
     position: absolute;
@@ -54,7 +54,7 @@
     right: 0;
     bottom: 0;
     display:inline-block;
-    opacity: 0.75;
+    /*opacity: 0.75;*/
     background-color:lightgray;
   }
 
