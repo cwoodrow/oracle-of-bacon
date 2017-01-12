@@ -1,24 +1,33 @@
 <template>
   <div>
     <div class="form-container">
-      <input :placeHolder="msg" class="actor-name"></input>
-      <button class="search-button">Search</button>
-      <div class="suggest">
+      <input placeHolder="Type Actor Name Here" class="actor-name" v-model="searchInput" @keypress.enter="search(searchInput)"></input>
+      <button class="search-button" @click="search(searchInput)">Search</button>
+      <div class="suggest" >
         <div>Kevin Spacey</div>
         <div>Kevin Spacey</div>
       </div>
     </div>
-
   </div>
 </template>
 
 <script>
   export default {
     name: 'actor-search',
+    props: {
+      onSearch: Function,
+    },
     data() {
       return {
-        msg: 'Kevin Bacon',
+        searchInput: '',
+        // msg: 'Kevin Bacon',
       };
+    },
+    methods: {
+      search(toSearch) {
+        this.onSearch(toSearch);
+        this.searchInput = '';
+      },
     },
   };
 </script>
@@ -46,7 +55,6 @@
     background-color:lightgray;
   }
   .search-button {
-    /*border:solid 3px #37403F;*/
     border-radius: 5px;
     font-size: 15px;
     position: absolute;
@@ -54,7 +62,6 @@
     right: 0;
     bottom: 0;
     display:inline-block;
-    /*opacity: 0.75;*/
     background-color:lightgray;
   }
 

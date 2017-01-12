@@ -9,8 +9,8 @@
            Plus d'informations <a href="https://fr.wikipedia.org/wiki/Six_Degrees_of_Kevin_Bacon">ici.</a></p>
       </div> -->
     <!-- </div> -->
-    <actor-search id="actor-search"></actor-search>
-    <search-result id="result"></search-result>
+    <actor-search id="actor-search" :on-search="consultOracle"></actor-search>
+    <search-result id="result" :actor-name="actorName"></search-result>
     <last-10-searches id="last-10-searches" class="box"></last-10-searches>
     <!-- <connected-user id="connected-user"></connected-user> -->
   </div>
@@ -20,15 +20,26 @@
 import ActorSearch from './components/ActorSearch';
 import SearchResult from './components/SearchResult';
 import Last10Searches from './components/Last10Searches';
-import ConnectedUser from './components/ConnectedUser';
+// import ConnectedUser from './components/ConnectedUser';
 
 export default {
   name: 'app',
+  data() {
+    return {
+      actorName: '',
+    };
+  },
   components: {
     ActorSearch,
     SearchResult,
     Last10Searches,
-    ConnectedUser,
+    // ConnectedUser,
+  },
+  methods: {
+    consultOracle(actorName) {
+      console.log(`search : ${actorName}`);
+      this.actorName = actorName;
+    },
   },
 };
 </script>
