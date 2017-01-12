@@ -74,7 +74,7 @@ export default {
   }
 
   html {
-    background: url(./assets/kevin-bacon-background.png) no-repeat center center fixed;
+    background: url(./assets/kevin-bacon-background.png) no-repeat top center fixed;
     -webkit-background-size: cover;
     -moz-background-size: cover;
     -o-background-size: cover;
@@ -83,7 +83,7 @@ export default {
 
   #last-10-searches {
     position: absolute;
-    top: 120px;
+    top: 115px;
     right: 50px;
   }
 
