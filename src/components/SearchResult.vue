@@ -98,7 +98,7 @@ const drawChart = (container, graphElements) => {
     cytoscape({
       container,
       layout: {
-        name: 'grid',
+        name: 'circle',
       },
       elements: graphElements,
       style: cytoscape.stylesheet()
@@ -114,15 +114,15 @@ const drawChart = (container, graphElements) => {
             },
             width: (node) => {
               if (node.data('value') === 'Bacon, Kevin (I)' || node.data('value') === 'Hitler, Adolf') {
-                return '400%';
+                return '200px';
               }
-              return '200%';
+              return '100px';
             },
             height: (node) => {
               if (node.data('value') === 'Bacon, Kevin (I)' || node.data('value') === 'Hitler, Adolf') {
-                return '400%';
+                return '200px';
               }
-              return '200%';
+              return '100px';
             },
             'text-valign': 'center',
             'text-halign': 'center',
@@ -134,15 +134,16 @@ const drawChart = (container, graphElements) => {
               }
               return 'black';
             },
-            'text-outline-width': 2,
+            'text-outline-width': 10,
             color: 'white',
             'text-wrap': 'wrap',
-            'font-size': '25px',
+            // 'font-size': '200px',
             label: 'data(value)',
           })
         .selector('edge')
           .style({
             'curve-style': 'bezier',
+            'control-point-step-size': 40,
             'target-arrow-shape': 'triangle',
 
           }),
@@ -221,6 +222,5 @@ const drawChart = (container, graphElements) => {
       width: 1000px;
       height: 600px;
   }
-
 
 </style>
