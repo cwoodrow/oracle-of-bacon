@@ -17,6 +17,7 @@
 </template>
 
 <script>
+import 'whatwg-fetch';
 import ActorSearch from './components/ActorSearch';
 import SearchResult from './components/SearchResult';
 import Last10Searches from './components/Last10Searches';
@@ -62,7 +63,7 @@ export default {
     border-radius: 10px;
     padding: 0px 5px 0px 5px;
     margin: 5px;
-    opacity: 0.75;
+    /*opacity: 0.75;*/
     background-color:lightgray;
     border: solid;
     width: -webkit-fit-content;

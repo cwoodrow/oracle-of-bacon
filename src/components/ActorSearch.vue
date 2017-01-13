@@ -5,7 +5,7 @@
       <button class="search-button" @click="search(searchInput)">Search</button>
       <div class="suggest" >
         <div>Kevin Spacey</div>
-        <div>Kevin Spacey</div>
+        <div>Kevin Smith</div>
       </div>
     </div>
   </div>
@@ -51,10 +51,11 @@
     height: 30px;
     font-size: 15px;
     display:inline-block;
-    opacity: 0.75;
+    /*opacity: 0.75;*/
     background-color:lightgray;
   }
   .search-button {
+    border:solid 1px #37403F;
     border-radius: 5px;
     font-size: 15px;
     position: absolute;
