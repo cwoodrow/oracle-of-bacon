@@ -60,17 +60,18 @@ export default {
   }
 
   .box {
-    border-radius: 10px;
+    /*border-radius: 10px;*/
     padding: 0px 5px 0px 5px;
-    margin: 5px;
+    margin: 30px;
     /*opacity: 0.75;*/
-    background-color:lightgray;
+    background-color:#aab3b2;
     border: solid;
     width: -webkit-fit-content;
     height: -webkit-fit-content;
     width: -moz-fit-content;
     height: -moz-fit-content;
-    border:solid 3px #37403F;
+    /*border:solid 2px #37403F;*/
+    border:none;
     margin-left: auto;
     margin-right: auto;
   }
@@ -85,8 +86,8 @@ export default {
     right: 0px;
   }
 
-  html {
-    background: url(./assets/kevin-bacon-background.png) no-repeat top center fixed;
+  body {
+    background: url(./assets/kevin-bacon-background-left.png) no-repeat;
     -webkit-background-size: cover;
     -moz-background-size: cover;
     -o-background-size: cover;
@@ -95,7 +96,9 @@ export default {
 
   #last-10-searches {
     position: absolute;
-    top: 115px;
+    background-color: #fbf3c2;
+    /*top: 115px;*/
+    top: 220px;
     right: 50px;
   }
 

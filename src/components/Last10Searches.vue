@@ -5,6 +5,15 @@
     <h3>Last 10 searches</h3>
     <ol>
       <li>Kevin Spacey</li>
+      <li>Kevin Spacey</li>
+      <li>Kevin Spacey</li>
+      <li>Kevin Spacey</li>
+      <li>Kevin Spacey</li>
+      <li>Kevin Spacey</li>
+      <li>Kevin Spacey</li>
+      <li>Kevin Spacey</li>
+      <li>Kevin Spacey</li>
+      <li>Kevin Spacey</li>
     </ol>
   </div>
 </template>

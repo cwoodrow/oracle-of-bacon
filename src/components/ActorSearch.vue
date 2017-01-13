@@ -3,9 +3,9 @@
     <div class="form-container">
       <input placeHolder="Type Actor Name Here" class="actor-name" v-model="searchInput" @keypress.enter="search(searchInput)"></input>
       <button class="search-button" @click="search(searchInput)">Search</button>
-      <div class="suggest" >
-        <div>Kevin Spacey</div>
-        <div>Kevin Smith</div>
+      <div v-show="searchInput" class="suggest" >
+        <div class="suggest-item" @click="search('Spacey, Kevin')">Spacey, Kevin</div>
+        <div class="suggest-item" @click="search('Smith, Kevin')">Smith, Kevin</div>
       </div>
     </div>
   </div>
@@ -19,7 +19,8 @@
     },
     data() {
       return {
-        searchInput: '',
+        searchInput: undefined,
+        suggest: undefined,
         // msg: 'Kevin Bacon',
       };
     },
@@ -44,41 +45,50 @@
     text-align: left;
   }
   .actor-name {
-    border:solid 2px #37403F;
-    border-radius: 5px;
+    border:none;
+    /*border:solid 2px #37403F;*/
+    /*border-radius: 5px;*/
     text-align:center;
     width: 220px;
     height: 30px;
     font-size: 15px;
     display:inline-block;
+    padding: 0px;
     /*opacity: 0.75;*/
     background-color:lightgray;
   }
   .search-button {
-    border:solid 1px #37403F;
-    border-radius: 5px;
+    border:none;
+    color: #fbffc3;
+    /*border-radius: 5px;*/
     font-size: 15px;
     position: absolute;
     top : 0;
     right: 0;
     bottom: 0;
     display:inline-block;
-    background-color:lightgray;
+    background-color:#5A847E;
   }
 
   .suggest {
-    border:solid 3px #37403F;
+    /*border:solid 3px #37403F;*/
+    border:none;
     position: absolute;
     width: 220px;
-    border-radius: 5px;
+    /*border-radius: 5px;*/
     text-align: center;
 
     background-color: white;
     margin-top: 2px;
-    box-shadow: 2px 2px 2px 1px grey;
+    /*box-shadow: 2px 2px 2px 1px grey;*/
     z-index: 100;
     font-family: 'Avenir', Helvetica, Arial, sans-serif;
-    display: none;
+    /*display: none;*/
+  }
+
+  .suggest-item:hover {
+    background-color: #bbcba4;
+    cursor: pointer;
   }
 
 </style>
