@@ -1,11 +1,10 @@
 <template>
   <div>
     <div class="form-container">
-      <input placeHolder="Type Actor Name Here" class="actor-name" v-model="searchInput" @keypress.enter="search(searchInput)"></input>
+      <input placeHolder="Type Actor Name Here" class="actor-name" v-model="searchInput" @keypress.enter="search(searchInput)" @keypress="suggest(searchInput)"></input>
       <button class="search-button" @click="search(searchInput)">Search</button>
       <div v-show="searchInput" class="suggest" >
-        <div class="suggest-item" @click="search('Spacey, Kevin')">Spacey, Kevin</div>
-        <div class="suggest-item" @click="search('Smith, Kevin')">Smith, Kevin</div>
+        <div v-for="suggest in suggests" class="suggest-item" @click="search(suggest)">{{suggest}}</div>
       </div>
     </div>
   </div>
@@ -20,7 +19,7 @@
     data() {
       return {
         searchInput: undefined,
-        suggest: undefined,
+        suggests: undefined,
         // msg: 'Kevin Bacon',
       };
     },
@@ -28,6 +27,18 @@
       search(toSearch) {
         this.onSearch(toSearch);
         this.searchInput = '';
+      },
+      suggest(toSuggest) {
+        fetch(`/api/suggest?q=${toSuggest}`)
+        .then(response => response.json())
+        .then((json) => {
+          console.log('setting this.suggests');
+          console.log(`toSuggest : ${toSuggest}`);
+          this.suggests = json;
+          console.log(`this.suggests ${JSON.stringify(this.suggests)}`);
+
+          // this.searchInput = toSuggest;
+        });
       },
     },
   };
