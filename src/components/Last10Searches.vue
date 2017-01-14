@@ -3,7 +3,7 @@
     <!-- <input :placeHolder="msg" class="actor-name"></input>
     <button class="search-button">Search</button> -->
     <h3>Last 10 searches</h3>
-    <ol >
+    <ol>
       <li v-for="search in lastSearches">{{search}}</li>
     </ol>
   </div>
@@ -28,5 +28,6 @@
 <style scoped>
   .last-10-searches {
       padding-right: 25px;
+      text-align: left;
   }
 </style>

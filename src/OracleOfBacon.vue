@@ -64,7 +64,7 @@ export default {
     padding: 0px 5px 0px 5px;
     margin: 30px;
     /*opacity: 0.75;*/
-    background-color:#aab3b2;
+    background-color:#e8eaea;
     border: solid;
     width: -webkit-fit-content;
     height: -webkit-fit-content;

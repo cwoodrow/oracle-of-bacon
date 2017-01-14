@@ -85,7 +85,7 @@
       actorName(newName) {
         if (newName) {
           this.$refs.cytos.style.visibility = 'visible';
-          fetch(`http://localhost:8080/api/bacon-to?actor=${newName}`)
+          fetch(`/api/bacon-to?actor=${newName}`)
             .then(response => response.json())
             .then((bodyJson) => {
               console.log(JSON.stringify(bodyJson));
